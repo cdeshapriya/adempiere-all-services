@@ -167,6 +167,7 @@ services:
 networks:
   adempiere_network:
     name: ${ADEMPIERE_NETWORK}
+    external: true
     
 volumes:
   volume_postgres:
