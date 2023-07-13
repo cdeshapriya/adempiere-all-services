@@ -151,6 +151,16 @@ services:
         condition: service_healthy
     networks:
       - adempiere_network
+    
+  redis:  
+    image: redis:6-alpine
+    container_name: adempiere-redis
+    stdin_open: true
+    tty: true
+    ports:
+      - '6379:6379'
+    networks:
+      - adempiere_network
       
   vue-ui:
     image: ${VUE_UI_IMAGE}
